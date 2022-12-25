@@ -1,0 +1,24 @@
+@import url("https://fonts.googleapis.com/css2?family=Solway:wght@700&display=swap");
+
+.home-c {
+  height: 100%;
+  width: 100%;
+  /* background-color: #7e6c71; */
+  display: flex;
+}
+.home-content {
+  width: 50%;
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 3rem;
+  margin-left: 25%;
+  color: white;
+  text-shadow: 2px 2px black;
+}
+.home-content p {
+  font-family: "Solway", serif;
+  line-height: 24px;
+  font-weight: 700;
+  font-size: 18px;
+}

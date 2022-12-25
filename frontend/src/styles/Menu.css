@@ -1,0 +1,93 @@
+.title {
+  font-family: "Dancing Script";
+  font-size: 4em;
+  color: rgb(7, 7, 7);
+  margin-left: 12px;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: fit-content;
+}
+.nav-logout {
+  cursor: pointer;
+}
+
+.bm-burger-button {
+  position: fixed;
+  width: 36px;
+  height: 30px;
+  right: 36px;
+  top: 36px;
+}
+.nav-right {
+  margin-right: 10%;
+  color: white;
+  text-shadow: 1px 1px black;
+  font-size: 18px;
+}
+.user-name {
+  margin-right: 12px;
+}
+
+/* Color/shape of burger icon bars */
+.bm-burger-bars {
+  background: white;
+  box-shadow: 1px 1px 0px 0px #373a47;
+}
+
+.bm-burger-button {
+  top: 25px;
+}
+
+/* Color/shape of burger icon bars on hover*/
+.bm-burger-bars-hover {
+  background: #686666;
+}
+.bm-menu-wrap {
+  width: 50%;
+  top: 0;
+}
+
+.bm-menu {
+  background: #373a47;
+  padding: 2.5em 1.5em 0;
+  font-size: 1.15em;
+}
+
+/* Morph shape necessary with bubble or elastic */
+.bm-morph-shape {
+  fill: #373a47;
+}
+.bm-cross {
+  background: #bdc3c7;
+}
+
+/* Wrapper for item list */
+.bm-item-list {
+  color: #b8b7ad;
+  padding: 0.8em;
+}
+
+/* Individual item */
+.bm-item {
+  display: inline-block;
+}
+
+.bm-overlay {
+  top: 0;
+  left: 0;
+}
+
+.menu-item {
+  color: azure;
+  margin: 1rem 0;
+}
+.menu-item:hover,
+.nav-logout:hover,
+.title:hover {
+  color: rgb(161, 74, 89);
+}
