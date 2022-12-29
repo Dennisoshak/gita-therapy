@@ -8,7 +8,6 @@ export const mainSlice = createSlice({
       state.isLoading = action.payload;
     },
     setError(state, action) {
-      console.log(action.payload);
       state.error = action.payload;
     },
   },

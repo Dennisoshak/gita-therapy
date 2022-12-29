@@ -8,7 +8,6 @@ export const authSlice = createSlice({
       return action.payload;
     },
     setUser(state, action) {
-      console.log(action.payload);
       return action.payload;
     },
     signUp(state, action) {

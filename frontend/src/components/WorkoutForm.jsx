@@ -31,8 +31,6 @@ const WorkoutForm = () => {
       setError(null);
       setEmptyFields([]);
       dispatch(setWorkouts(user.token));
-
-      console.log("new workout added", response);
     } else if (response?.name === "AxiosError") {
       setError(response.response.data.message);
       setEmptyFields(response.emptyFields);

@@ -10,7 +10,7 @@
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  height: fit-content;
+  /* height: fit-content; */
 }
 .nav-logout {
   cursor: pointer;
@@ -56,6 +56,7 @@
   background: #373a47;
   padding: 2.5em 1.5em 0;
   font-size: 1.15em;
+  overflow: hidden !important;
 }
 
 /* Morph shape necessary with bubble or elastic */

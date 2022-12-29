@@ -21,7 +21,6 @@ const getWorkoutById = async (req, res) => {
 
 const createWorkout = async (req, res) => {
   const { title, load, reps } = req.body;
-  console.log(title);
   let emptyFields = [];
   if (!title) emptyFields.push("title");
   if (!load) emptyFields.push("load");

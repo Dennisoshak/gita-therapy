@@ -22,7 +22,6 @@ export const getSignUp = (email, password) => {
 
 export const getLogin = (email, password) => {
   return async (dispatch) => {
-    console.log("oi");
     dispatch(setIsLoading(true));
     const response = await sendLogin(email, password);
     if (response.name === "AxiosError") {

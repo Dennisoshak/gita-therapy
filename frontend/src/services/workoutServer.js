@@ -27,7 +27,6 @@ export const deleteWorkout = async (id) => {
         Authorization: `Bearer ${token}`,
       },
     });
-    console.log(response);
     return response;
   } catch (error) {
     return error;

@@ -10,7 +10,6 @@ const Signup = () => {
   const error = useAppSelector((state) => state.main.error);
   const user = useAppSelector((state) => state.user);
 
-  console.log(error);
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
 

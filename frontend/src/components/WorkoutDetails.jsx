@@ -8,7 +8,6 @@ const WorkoutDetails = ({ workout }) => {
   const dispatch = useAppDispatch();
   const user = useAppSelector((state) => state.user);
 
-  console.log(user);
   const handleClick = async () => {
     if (!user) return;
     await deleteWorkout(workout._id, user.token);
