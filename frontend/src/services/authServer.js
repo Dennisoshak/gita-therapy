@@ -2,9 +2,10 @@ import axios from "axios";
 
 const baseURL = "http://localhost:4000";
 
-export const sendSignUp = async (email, password) => {
+export const sendSignUp = async (name, email, password) => {
   try {
     const response = await axios.post(`${baseURL}/api/user/signup`, {
+      name,
       email,
       password,
     });

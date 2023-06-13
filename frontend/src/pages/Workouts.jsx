@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import "../styles/Events.css"
 
 // components
 
@@ -21,15 +22,18 @@ const Workouts = () => {
   }, [dispatch]);
 
   return (
-    <div className="home">
+    
       <div className="workouts">
-        {workouts &&
-          workouts.map((workout) => (
-            <WorkoutDetails key={workout._id} workout={workout} />
-          ))}
-      </div>
       <WorkoutForm />
-    </div>
+
+        {/* {workouts &&
+          workouts.map((workout) => (
+            <div>
+            <WorkoutDetails key={workout._id} workout={workout} />
+            </div>
+          ))} */}
+          <WorkoutDetails/>
+      </div>
   );
 };
 

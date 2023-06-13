@@ -45,7 +45,7 @@ const Login = () => {
         value={password}
       />
       <p>
-        Don't have an account? <a href="/signup">Sign up</a>
+        Don't have an account? <a href="/signup" style={{marginLeft:"1rem"}}>Sign up</a>
       </p>
       <button>Log in</button>
       {error && <div className="error">{error}</div>}

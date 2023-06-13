@@ -7,6 +7,7 @@ import { setError } from "../store/mainSlice";
 const Signup = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [name,setName] = useState("")
   const error = useAppSelector((state) => state.main.error);
   const user = useAppSelector((state) => state.user);
 
@@ -15,7 +16,7 @@ const Signup = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    dispatch(getSignUp(email, password));
+    dispatch(getSignUp(name, email, password));
   };
   useEffect(() => {
     dispatch(setError(""));
@@ -27,6 +28,14 @@ const Signup = () => {
   return (
     <form className="signup" onSubmit={(e) => handleSubmit(e)}>
       <h3>Sign up</h3>
+      <label>Name</label>
+      <input
+        type="text"
+        onChange={(e) => {
+          setName(e.target.value);
+        }}
+        value={name}
+      />
       <label>Email</label>
       <input
         type="email"

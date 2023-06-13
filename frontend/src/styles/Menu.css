@@ -16,6 +16,9 @@
   cursor: pointer;
 }
 
+.nav-login{
+  margin-right: 2rem;
+}
 .bm-burger-button {
   position: fixed;
   width: 36px;
@@ -24,13 +27,14 @@
   top: 36px;
 }
 .nav-right {
-  margin-right: 10%;
+  margin-right: 7%;
   color: white;
   text-shadow: 1px 1px black;
   font-size: 18px;
 }
 .user-name {
-  margin-right: 12px;
+  margin-right: 3rem;
+  font-size: 3rem;
 }
 
 /* Color/shape of burger icon bars */

@@ -22,24 +22,25 @@ const NavBar = () => {
         </Link>
         {user && (
           <div className="nav-right">
-            <span className="user-name">{user.email}</span>
-            <span className="nav-logout" onClick={handleLogout}>
-              Log out
-            </span>
+            <span className="user-name">Welcome {user.name}</span>
+         
 
             <Menu slide right width={"30%"}>
               <a id="home" className="menu-item" href="/">
                 Home
               </a>
               <a id="workouts" className="menu-item" href="/workouts">
-                Workouts
+                Events and Responses
+              </a>
+              <a id="logout" className="logout" href="/login" onClick={handleLogout}>
+                Log Out
               </a>
             </Menu>
           </div>
         )}
         {!user && (
           <div className="nav-right">
-            <Link className="user-name" to="/login">
+            <Link className="nav-login" to="/login">
               Login
             </Link>
             <Link className="nav-logout" to="/signup">
