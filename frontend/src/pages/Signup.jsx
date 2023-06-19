@@ -8,7 +8,7 @@ const Signup = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [name,setName] = useState("")
-  const error = useAppSelector((state) => state.main.error);
+  const error = useAppSelector((state) => state.error);
   const user = useAppSelector((state) => state.user);
 
   const dispatch = useAppDispatch();

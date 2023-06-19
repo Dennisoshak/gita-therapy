@@ -9,6 +9,7 @@ const EventDetails = ({  }) => {
   const dispatch = useAppDispatch();
   const user = useAppSelector((state) => state.user);
   const events = useAppSelector((state) => state.events);
+  console.log(events)
   
 
   // const handleClick = async () => {
@@ -32,7 +33,7 @@ const EventDetails = ({  }) => {
           </tr>
         </thead>
         <tbody>
-          {events.map((event) => (
+          {events && events.map((event) => (
             <tr
               key={event.id}
               sx={{ '&:last-child td, &:last-child th': { border: 0 } }}

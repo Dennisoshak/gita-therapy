@@ -18,6 +18,8 @@ app.use((req, res, next) => {
   next();
 });
 
+if (process.env.NODE_DEV === 'production'){
+
 app.use(express.static(path.join(__dirname, '../frontend/build')));
 app.use(express.static(path.join(__dirname, '../frontend/public')));
 
@@ -25,6 +27,7 @@ app.use(express.static(path.join(__dirname, '../frontend/public')));
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, '../frontend/build', 'index.html'));
 });
+}
 
 
 // routes
