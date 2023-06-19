@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
 
 // pages & components
 import Home from "./pages/Home";
-import Workouts from "./pages/Workouts";
+import Events from "./pages/Events";
 import Navbar from "./components/NavBar";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
@@ -11,7 +11,7 @@ import { useAuth } from "./hooks/usAuth";
 import { useAppSelector } from "./hooks/redux-hooks";
 
 function App() {
-  useAuth();
+ const auth = useAuth();
   const user = useAppSelector((state) => state.user);
   return (
     <div className="App">
@@ -23,7 +23,7 @@ function App() {
             path="/"
             element={user ? <Home /> : <Navigate to="/login" />}
           />
-          <Route path="/workouts" element={user && <Workouts />} />
+          <Route path="/events" element={user && <Events />} />
           <Route
             path="/signup"
             element={!user ? <Signup /> : <Navigate to="/" />}

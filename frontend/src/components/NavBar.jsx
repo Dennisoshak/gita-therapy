@@ -2,6 +2,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../hooks/redux-hooks";
 import { getLogout } from "../actions/authActions";
 import { slide as Menu } from "react-burger-menu";
+import TextDisplay from "./TextDisplay";
 import "../styles/Menu.css";
 const NavBar = () => {
   const dispatch = useAppDispatch();
@@ -18,18 +19,20 @@ const NavBar = () => {
     <header>
       <div className="nav">
         <Link className="title" to="/">
-          Gita Therapy
+         <TextDisplay text={'Gita Therapy'}/>
         </Link>
         {user && (
           <div className="nav-right">
-            <span className="user-name">Welcome {user.name}</span>
+            <div className="user-name">
+              {`Welcome ${user.name}`}
+            </div>
          
 
             <Menu slide right width={"30%"}>
               <a id="home" className="menu-item" href="/">
                 Home
               </a>
-              <a id="workouts" className="menu-item" href="/workouts">
+              <a id="events" className="menu-item" href="/events">
                 Events and Responses
               </a>
               <a id="logout" className="logout" href="/login" onClick={handleLogout}>

@@ -2,11 +2,11 @@ import axios from "axios";
 
 const baseURL = "http://localhost:4000";
 
-export const fetchWorkouts = async () => {
+export const fetchEvents = async () => {
   try {
     const token = JSON.parse(localStorage.getItem("user")).token;
 
-    const response = await axios.get(`${baseURL}/api/workouts`, {
+    const response = await axios.get(`${baseURL}/api/events`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -18,11 +18,11 @@ export const fetchWorkouts = async () => {
   }
 };
 
-export const deleteWorkout = async (id) => {
+export const deleteEvent = async (id) => {
   try {
     const token = JSON.parse(localStorage.getItem("user")).token;
 
-    const response = await axios.delete(`${baseURL}/api/workouts/${id}`, {
+    const response = await axios.delete(`${baseURL}/api/events/${id}`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -33,11 +33,11 @@ export const deleteWorkout = async (id) => {
   }
 };
 
-export const postWorkout = async (workout, token) => {
+export const postEvent = async (event, token) => {
   try {
     const token = JSON.parse(localStorage.getItem("user")).token;
 
-    const response = await axios.post(`${baseURL}/api/workouts`, workout, {
+    const response = await axios.post(`${baseURL}/api/events`, event, {
       headers: {
         Authorization: `Bearer ${token}`,
       },

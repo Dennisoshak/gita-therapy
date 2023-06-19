@@ -1,7 +1,7 @@
 import { sendSignUp, sendLogin } from "../services/authServer";
 import { logout, setUser } from "../store/authSlice";
 import { setError, setIsLoading } from "../store/mainSlice";
-import { setAllWorkouts } from "../store/workoutSlice";
+import { setAllEvents } from "../store/eventSlice";
 
 export const getSignUp = (name ,email, password) => {
   return async (dispatch) => {
@@ -43,6 +43,6 @@ export const getLogout = () => {
   return async (dispatch) => {
     localStorage.removeItem("user");
     dispatch(logout());
-    dispatch(setAllWorkouts(null));
+    dispatch(setAllEvents(null));
   };
 };

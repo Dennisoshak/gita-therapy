@@ -2,17 +2,17 @@ import React from "react";
 import "../styles/Home.css";
 import gita from "../assets/gita.jpg";
 
+
 const Home = () => {
   return (
     <div className="home-c">
-    
         <h1 style={{margin:"2rem"}}>About me</h1>
         <div className="about">
         <div >
           <img src={gita} alt="" className="gita-img" />
         </div>
         <div className="about-text">
-        <p>
+        
           At my practice, I am dedicated to providing effective psychotherapy
           services based on the principles of Cognitive Behavioral Therapy. Our
           skilled and compassionate psychotherapist utilizes CBT techniques to
@@ -44,7 +44,7 @@ const Home = () => {
           that this description is a general template and can be customized to
           reflect the specific expertise, experience, and approach of your
           psychotherapist and practice.
-        </p>
+      
         </div></div>
   
     </div>

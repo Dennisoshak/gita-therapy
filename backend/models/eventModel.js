@@ -2,18 +2,22 @@ const mongoose = require("mongoose");
 
 const Schema = mongoose.Schema;
 
-const workoutSchema = new Schema(
+const eventSchema = new Schema(
   {
-    title: {
+    situation: {
       type: String,
       required: true,
     },
-    reps: {
+    thoughts: {
+      type: String,
+      required: true,
+    },
+    emotion: {
       type: Number,
       required: true,
     },
-    load: {
-      type: Number,
+    reaction: {
+      type: String,
       required: true,
     },
     user_id: {
@@ -24,4 +28,4 @@ const workoutSchema = new Schema(
   { timestamps: true }
 );
 
-module.exports = mongoose.model("Workout", workoutSchema);
+module.exports = mongoose.model("Event", eventSchema);

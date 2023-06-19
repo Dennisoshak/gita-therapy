@@ -1,9 +1,9 @@
 require("dotenv").config();
 const cors = require("cors");
-
+const path = require('path')
 const express = require("express");
 const mongoose = require("mongoose");
-const workoutRoutes = require("./routes/workouts");
+const eventRoutes = require("./routes/events");
 const userRoutes = require("./routes/user");
 
 // express app
@@ -18,8 +18,16 @@ app.use((req, res, next) => {
   next();
 });
 
+app.use(express.static(path.join(__dirname, '../frontend/build')));
+
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../frontend/build', 'index.html'));
+});
+
+
 // routes
-app.use("/api/workouts", workoutRoutes);
+app.use("/api/events", eventRoutes);
 app.use("/api/user", userRoutes);
 
 mongoose

@@ -27,17 +27,16 @@
 }
 
 .about {
-  margin: 1rem 1rem 0 10%;
+  margin: 0 1rem 0 10%;
   display:flex;
   flex-direction: row;
   column-gap: 2rem;
 }
 
 .gita-img{
-  height: 62%;
+  height: 62vh;
 }
 .about-text {
-  padding: 1rem;
   width: 80%;
 }
 .logout{

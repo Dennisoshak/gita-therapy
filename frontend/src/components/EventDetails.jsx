@@ -1,33 +1,26 @@
 // date fns
 import formatDistanceToNow from "date-fns/formatDistanceToNow";
-import { setWorkouts } from "../actions/workoutActions";
+import { setEvents } from "../actions/eventActions";
 import { useAppDispatch, useAppSelector } from "../hooks/redux-hooks";
-import { deleteWorkout } from "../services/workoutServer";
-import Table from '@mui/material/Table';
-import TableBody from '@mui/material/TableBody';
-import TableCell from '@mui/material/TableCell';
-import TableContainer from '@mui/material/TableContainer';
-import TableHead from '@mui/material/TableHead';
-import TableRow from '@mui/material/TableRow';
-import Paper from '@mui/material/Paper';
+import { deleteEvent } from "../services/eventServer";
 
-const WorkoutDetails = ({  }) => {
+
+const EventDetails = ({  }) => {
   const dispatch = useAppDispatch();
   const user = useAppSelector((state) => state.user);
-  const workouts = useAppSelector((state) => state.workouts);
+  const events = useAppSelector((state) => state.events);
   
 
   // const handleClick = async () => {
   //   if (!user) return;
-  //   await deleteWorkout(workout._id, user.token);
-  //   dispatch(setWorkouts(user.token));
+  //   await deleteEvent(event._id, user.token);
+  //   dispatch(setEvents(user.token));
   // };
 
 
   
-
   return (
-    <div className="workout-details">
+    <div className="event-details">
       <table sx={{minWidth:700}}  aria-label="simple table">
         <thead>
           <tr>
@@ -39,18 +32,18 @@ const WorkoutDetails = ({  }) => {
           </tr>
         </thead>
         <tbody>
-          {workouts.map((workout) => (
+          {events.map((event) => (
             <tr
-              key={workout.id}
+              key={event.id}
               sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
             >
               <td component="th" scope="row">
-                {workout.title}
+                {event.situation}
               </td>
-              <td align="left">{workout.load}</td>
-              <td align="left">{workout.load}</td>
-              <td align="left"> name</td>
-              <td align="left"> {formatDistanceToNow(new Date(workout.createdAt), { addSuffix: true })}</td>
+              <td align="left">{event.thoughts}</td>
+              <td align="left">{event.emotion}</td>
+              <td align="left"> {event.reaction}</td>
+              <td align="left"> {formatDistanceToNow(new Date(event.createdAt), { addSuffix: true })}</td>
             </tr>
           ))}
         </tbody>
@@ -59,20 +52,20 @@ const WorkoutDetails = ({  }) => {
   );
 };
 
-export default WorkoutDetails;
+export default EventDetails;
 
 
-  // <h4>{workout.title}</h4>
+  // <h4>{event.title}</h4>
   //     <p>
   //       <strong>Load (kg): </strong>
-  //       {workout.load}
+  //       {event.load}
   //     </p>
   //     <p>
   //       <strong>Reps: </strong>
-  //       {workout.reps}
+  //       {event.reps}
   //     </p>
   //     <p>
-  //       {formatDistanceToNow(new Date(workout.createdAt), { addSuffix: true })}
+  //       {formatDistanceToNow(new Date(event.createdAt), { addSuffix: true })}
   //     </p>
   //     <span className="material-symbols-outlined" onClick={handleClick}>
   //       delete

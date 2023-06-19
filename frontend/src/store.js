@@ -1,13 +1,14 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { workoutSlice } from "./store/workoutSlice";
+import { eventSlice } from "./store/eventSlice";
 import { authSlice } from "./store/authSlice";
-import { mainSlice } from "./store/mainSlice";
+import { errorSlice,loadSlice } from "./store/mainSlice";
 
 const store = configureStore({
   reducer: {
-    workouts: workoutSlice.reducer,
+    events: eventSlice.reducer,
     user: authSlice.reducer,
-    main: mainSlice.reducer,
+    error:errorSlice.reducer,
+    isLoading:loadSlice.reducer
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
