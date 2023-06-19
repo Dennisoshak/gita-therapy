@@ -19,6 +19,7 @@ app.use((req, res, next) => {
 });
 
 app.use(express.static(path.join(__dirname, '../frontend/build')));
+app.use(express.static(path.join(__dirname, 'frontend/public')));
 
 
 app.get('*', (req, res) => {
