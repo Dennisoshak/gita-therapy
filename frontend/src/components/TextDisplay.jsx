@@ -3,7 +3,6 @@ import React, { useEffect, useState } from "react";
 const TextDisplay = ({text}) => {
   const [textToDisplay, setText] = useState("");
   const [index, setIndex] = useState(0);
-  const [d,setD]=useState(true)
   
 
   useEffect(() => {
@@ -16,14 +15,9 @@ const TextDisplay = ({text}) => {
       return () => clearTimeout(timeout);
     }
   
-
+// eslint-disable-next-line
   }, [index]);
-  useEffect(()=>{
-  const interval =   setInterval(()=>{
-      setD(!d)
-    },500)
-    return()=>clearInterval(interval)
-  })
+
 
   return <div>{textToDisplay}<span></span></div>;
 };

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
 
 // pages & components
@@ -8,11 +8,9 @@ import Navbar from "./components/NavBar";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import { useAuth } from "./hooks/usAuth";
-import { useAppSelector } from "./hooks/redux-hooks";
 
 function App() {
- const auth = useAuth();
-  const user = useAppSelector((state) => state.user);
+ const user = useAuth();
   return (
     <div className="App">
       <div className="pages">

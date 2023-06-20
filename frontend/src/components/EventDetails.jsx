@@ -1,13 +1,10 @@
 // date fns
 import formatDistanceToNow from "date-fns/formatDistanceToNow";
-import { setEvents } from "../actions/eventActions";
-import { useAppDispatch, useAppSelector } from "../hooks/redux-hooks";
-import { deleteEvent } from "../services/eventServer";
+import {  useAppSelector } from "../hooks/redux-hooks";
 
 
-const EventDetails = ({  }) => {
-  const dispatch = useAppDispatch();
-  const user = useAppSelector((state) => state.user);
+const EventDetails = () => {
+ 
   const events = useAppSelector((state) => state.events);
   console.log(events)
   
@@ -38,7 +35,7 @@ const EventDetails = ({  }) => {
               key={event.id}
               sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
             >
-              <td component="th" scope="row">
+              <td component="th" >
                 {event.situation}
               </td>
               <td align="left">{event.thoughts}</td>

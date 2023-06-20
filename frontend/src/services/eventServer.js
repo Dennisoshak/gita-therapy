@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const baseURL = "http://localhost:4000";
+const baseURL = process.env.REACT_BASE_URL;
 
 export const fetchEvents = async () => {
   try {
