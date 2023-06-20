@@ -1,7 +1,8 @@
 import axios from "axios";
 
-const baseURL = process.env.REACT_BASE_URL;
+const baseURL = process.env.REACT_APP_BASEURL || "http://localhost:4000";
 
+console.log(baseURL);
 export const fetchEvents = async () => {
   try {
     const token = JSON.parse(localStorage.getItem("user")).token;
