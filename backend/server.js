@@ -24,8 +24,8 @@ app.use(express.static(path.join(__dirname, '../frontend/build')));
 app.use(express.static(path.join(__dirname, '../frontend/public')));
 
 
-app.get('https://gita-therapy-b0a2a6fa493f.herokuapp.com/', (req, res) => {
-  res.sendFile(path.join(__dirname, '../frontend/build', 'index.html'));
+app.get('/', (req, res) => {
+  res.sendFile(path.resolve(__dirname, '../frontend/build', 'index.html'));
 });
 }
 
@@ -39,6 +39,7 @@ mongoose
   .then(() => {
     app.listen(process.env.PORT, () => {
       console.log("connected to db & listening on port", process.env.PORT);
+      console.log(__dirname)
     });
   })
   .catch((error) => {
