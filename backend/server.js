@@ -24,7 +24,7 @@ app.use(express.static(path.join(__dirname, '../frontend/build')));
 app.use(express.static(path.join(__dirname, '../frontend/public')));
 
 
-app.get('*', (req, res) => {
+app.get('https://gita-therapy-b0a2a6fa493f.herokuapp.com/', (req, res) => {
   res.sendFile(path.join(__dirname, '../frontend/build', 'index.html'));
 });
 }
