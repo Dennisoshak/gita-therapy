@@ -19,13 +19,13 @@ app.use((req, res, next) => {
 });
 
 if (process.env.NODE_DEV === 'production'){
-
+console.log("production")
 app.use(express.static(path.join(__dirname, '../frontend/build')));
 app.use(express.static(path.join(__dirname, '../frontend/public')));
 
 
 app.get('/', (req, res) => {
-  res.sendFile(path.resolve(__dirname, '../frontend/build', 'index.html'));
+  res.sendFile(path.join(__dirname, '../frontend/build', 'index.html'));
 });
 }
 
@@ -38,8 +38,7 @@ mongoose
   .connect(process.env.MONGO_URI)
   .then(() => {
     app.listen(process.env.PORT, () => {
-      console.log("connected to db & listening on port", process.env.PORT);
-      console.log(__dirname)
+      console.log("connected to db & listening on", process.env.PORT);
     });
   })
   .catch((error) => {
