@@ -1,6 +1,7 @@
 import axios from "axios";
 
 const baseURL = process.env.REACT_APP_BASEURL;
+console.log(baseURL)
 export const sendSignUp = async (name, email, password) => {
   try {
     const response = await axios.post(`${baseURL}/api/user/signup`, {
@@ -20,6 +21,8 @@ export const sendLogin = async (email, password) => {
       email,
       password,
     });
+    console.log(baseURL)
+
     return response;
   } catch (error) {
     console.log(error);
