@@ -10,6 +10,7 @@ import Signup from "./pages/Signup";
 import { useAuth } from "./hooks/usAuth";
 
 function App() {
+console.log("OI")
  const user = useAuth();
   return (
     <div className="App">

@@ -5,6 +5,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const eventRoutes = require("./routes/events");
 const userRoutes = require("./routes/user");
+const env = require('dotenv').config();
 const { error } = require("console");
 
 // express app
@@ -38,7 +39,7 @@ app.get('*', (req, res) =>{
 // routes
 app.use("/api/events", eventRoutes);
 app.use("/api/user", userRoutes);
-
+console.log(process.env.PORT)
 mongoose
   .connect(process.env.MONGO_URI)
   .then(() => {
