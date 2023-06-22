@@ -1,6 +1,7 @@
 import axios from "axios";
 
 const baseURL = process.env.REACT_APP_BASEURL;
+const node_env = process.env.NODE_ENV;
 console.log(baseURL)
 export const sendSignUp = async (name, email, password) => {
   try {
