@@ -5,6 +5,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const eventRoutes = require("./routes/events");
 const userRoutes = require("./routes/user");
+const { error } = require("console");
 
 // express app
 const app = express();
@@ -18,16 +19,20 @@ app.use((req, res, next) => {
   next();
 });
 
-if (process.env.NODE_DEV === 'production'){
-console.log("production")
-app.use(express.static(path.join(__dirname, '../frontend/build')));
-app.use(express.static(path.join(__dirname, '../frontend/public')));
+
+// app.use(express.static(path.join(__dirname, '../frontend/public')));
+if (process.env.NODE_ENV==="production"){
+app.use(express.static(path.join(__dirname, '../frontend/build')))
 
 
-app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, '../frontend/build', 'index.html'));
-});
+app.get('*', (req, res) =>{
+  res.sendFile(path.join(__dirname, "../frontend/build/index.html"))
 }
+)
+}
+
+
+
 
 
 // routes

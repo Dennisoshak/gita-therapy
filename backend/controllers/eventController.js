@@ -4,6 +4,8 @@ const mongoose = require("mongoose");
 const getAllEvents = async (req, res) => {
   const user_id = req.user._id;
   const events = await Event.find({ user_id }).sort({ createdAt: -1 });
+  res.set('Content-Type', 'application/json');
+  console.log(events)
   res.status(200).json(events);
 };
 
