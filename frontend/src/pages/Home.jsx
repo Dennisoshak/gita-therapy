@@ -39,11 +39,8 @@ const Home = () => {
           collaborative therapeutic relationship built on empathy, trust, and
           respect. Whether you are seeking therapy for personal growth, managing
           stress, or addressing specific mental health challenges, we are here
-          to support you on your journey. Take the first step towards positive
-          change and contact us today to schedule an appointment. Please note
-          that this description is a general template and can be customized to
-          reflect the specific expertise, experience, and approach of your
-          psychotherapist and practice.
+          to support you on your journey. 
+          
       
         </div></div>
   

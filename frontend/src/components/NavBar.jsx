@@ -23,9 +23,9 @@ const NavBar = () => {
         </Link>
         {user && (
           <div className="nav-right">
-            <div className="user-name">
+            {/* <div className="user-name">
               {`Welcome ${user.name}`}
-            </div>
+            </div> */}
          
 
             <Menu slide right width={"30%"}>

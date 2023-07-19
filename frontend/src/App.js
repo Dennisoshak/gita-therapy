@@ -8,6 +8,7 @@ import Navbar from "./components/NavBar";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import { useAuth } from "./hooks/usAuth";
+import Footer from "./components/Footer";
 
 function App() {
 console.log("OI")
@@ -33,6 +34,7 @@ console.log("OI")
           />
         </Routes>
       </div>
+      <Footer/>
     </div>
   );
 }

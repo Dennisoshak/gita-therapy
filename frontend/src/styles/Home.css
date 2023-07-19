@@ -43,3 +43,9 @@
   position: absolute;
   bottom: 2rem;
 }
+
+@media (max-width: 600px) {
+  .about {
+    flex-direction:column ;
+  }
+}
