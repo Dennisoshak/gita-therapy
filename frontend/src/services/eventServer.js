@@ -14,6 +14,7 @@ export const fetchEvents = async () => {
 console.log(response)
     return response;
   } catch (error) {
+    console.log(error)
     return error;
   }
 };

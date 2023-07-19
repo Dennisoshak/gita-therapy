@@ -11,13 +11,12 @@ import { useAuth } from "./hooks/usAuth";
 import Footer from "./components/Footer";
 
 function App() {
-console.log("OI")
  const user = useAuth();
+ console.log(user)
   return (
     <div className="App">
       <div className="pages">
         <Navbar />
-
         <Routes>
           <Route
             path="/"

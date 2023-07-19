@@ -34,7 +34,7 @@
 }
 
 .gita-img{
-  height: 62vh;
+  width: 100%;
 }
 .about-text {
   width: 80%;
@@ -44,7 +44,7 @@
   bottom: 2rem;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 700px) {
   .about {
     flex-direction:column ;
   }
