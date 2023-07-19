@@ -6,7 +6,6 @@ const mongoose = require("mongoose");
 const eventRoutes = require("./routes/events");
 const userRoutes = require("./routes/user");
 const env = require('dotenv').config();
-const { error } = require("console");
 
 // express app
 const app = express();
@@ -26,20 +25,18 @@ if (process.env.NODE_ENV==="production"){
 app.use(express.static(path.join(__dirname, '../frontend/build')))
 
 
-app.get('/', (req, res) =>{
+app.get('*', (req, res) =>{
   res.sendFile(path.join(__dirname, "../frontend/build/index.html"))
 }
 )
 }
 
 
-console.log(process.env.MONGO_URI)
 
 
 // routes
 app.use("/api/events", eventRoutes);
 app.use("/api/user", userRoutes);
-console.log(process.env.PORT)
 mongoose
   .connect(process.env.MONGO_URI)
   .then(() => {
