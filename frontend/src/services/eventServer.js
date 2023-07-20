@@ -6,7 +6,7 @@ export const fetchEvents = async () => {
   try {
     const token = JSON.parse(localStorage.getItem("user")).token;
 
-    const response = await axios.get(`${baseURL}/api/events`, {
+    const response = await axios.get(`${baseURL}/api/events/all`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },

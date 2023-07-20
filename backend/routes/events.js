@@ -13,7 +13,7 @@ const router = express.Router();
 
 router.use(requireAuth);
 
-router.get("/", getAllEvents);
+router.get("/all", getAllEvents);
 
 router.get("/:id", getEventById);
 
