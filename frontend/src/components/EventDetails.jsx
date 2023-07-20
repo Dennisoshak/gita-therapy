@@ -32,7 +32,7 @@ const EventDetails = () => {
         <tbody>
           {events[0] && events.map((event) => (
             <tr
-              key={event.id}
+              key={event._id}
               sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
             >
               <td component="th" >
