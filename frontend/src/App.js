@@ -7,8 +7,7 @@ import Events from "./pages/Events";
 import Navbar from "./components/NavBar";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
-import { useAuth } from "./hooks/usAuth";
-import Footer from "./components/Footer";
+import { useAuth } from "./hooks/usAuth"
 
 function App() {
  const user = useAuth();

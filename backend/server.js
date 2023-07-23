@@ -20,6 +20,23 @@ app.use((req, res, next) => {
   next();
 });
 
+mongoose
+  .connect(process.env.MONGO_URI)
+  .then(() => {
+    app.listen(PORT, () => {
+      console.log("connected to db & listening on", PORT);
+    });
+  })
+  .catch((error) => {
+    console.log(error);
+  });
+
+
+
+// routes
+app.use("/api/events", eventRoutes);
+app.use("/api/user", userRoutes);
+
 
 // app.use(express.static(path.join(__dirname, '../frontend/public')));
 if (process.env.NODE_ENV==="production"){
@@ -33,18 +50,3 @@ app.get('*', (req, res) =>{
 }
 
 
-
-
-// routes
-app.use("/api/events", eventRoutes);
-app.use("/api/user", userRoutes);
-mongoose
-  .connect(process.env.MONGO_URI)
-  .then(() => {
-    app.listen(PORT, () => {
-      console.log("connected to db & listening on", PORT);
-    });
-  })
-  .catch((error) => {
-    console.log(error);
-  });
