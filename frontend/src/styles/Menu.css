@@ -24,7 +24,7 @@
   width: 36px;
   height: 30px;
   right: 36px;
-  top: 36px;
+  top: 32px;
 }
 .nav-right {
   margin-right: 7%;
@@ -43,9 +43,7 @@
   box-shadow: 1px 1px 0px 0px #373a47;
 }
 
-.bm-burger-button {
-  top: 25px;
-}
+
 
 /* Color/shape of burger icon bars on hover*/
 .bm-burger-bars-hover {

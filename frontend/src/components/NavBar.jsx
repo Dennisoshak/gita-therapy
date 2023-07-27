@@ -2,12 +2,13 @@ import { Link, useNavigate } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../hooks/redux-hooks";
 import { getLogout } from "../actions/authActions";
 import { slide as Menu } from "react-burger-menu";
+import { useTranslation } from "react-i18next";
 import TextDisplay from "./TextDisplay";
 import "../styles/Menu.css";
 const NavBar = () => {
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
-
+const {t,i18n} = useTranslation()
   const user = useAppSelector((state) => state.user);
 
   const handleLogout = () => {
@@ -15,6 +16,10 @@ const NavBar = () => {
     navigate("/login");
   };
 
+  const changeLanguageHandler = (e) => {
+    const languageValue = e.target.value
+    i18n.changeLanguage(languageValue);
+  }
   return (
     <header>
       <div className="nav">
@@ -23,19 +28,19 @@ const NavBar = () => {
         </Link>
         {user && (
           <div className="nav-right">
-            {/* <div className="user-name">
-              {`Welcome ${user.name}`}
-            </div> */}
-         
+           
+           <select className="custom-select"  onChange={changeLanguageHandler}>
+        <option value="en" >English</option>
+        <option value="he" >Hebrew</option>
+      </select>
 
             <Menu slide right width={"30%"}>
-              <a id="home" className="menu-item" href="/">
-                Home
+              <a id="home" className="menu-item" href="/">{t("home")}
               </a>
               <a id="events" className="menu-item" href="/events">
                 Events and Responses
               </a>
-              <a id="logout" className="logout" href="/login" onClick={handleLogout}>
+              <a id="logout" className="logout" href="/login" onClick={(e)=>handleLogout(e)}>
                 Log Out
               </a>
             </Menu>
@@ -51,6 +56,7 @@ const NavBar = () => {
             </Link>
           </div>
         )}
+      
       </div>
     </header>
   );
