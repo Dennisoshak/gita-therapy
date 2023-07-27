@@ -2,9 +2,10 @@ const mongoose = require("mongoose");
 const bcrypt = require("bcrypt");
 const Schema = mongoose.Schema;
 const validator = require("validator");
+const emailValidator = require("deep-email-validator");
 
 const userSchema = new Schema({
-  name:{
+  name: {
     type: String,
     required: true,
     unique: false,
@@ -25,11 +26,13 @@ const userSchema = new Schema({
 });
 
 userSchema.statics.signup = async function (name, email, password) {
+  const { valid, reason, validators } = await emailValidator.validate(email);
   if (!email || !password || !name) {
     throw Error("All fields are required");
   }
-  if (!validator.isEmail(email)) {
-    throw Error("Email not valid");
+  if (!valid) {
+    console.log(validators[reason].reason);
+    throw Error(`please enter a valid Email`);
   }
   if (password.length < 6) {
     throw Error("Password must contain at least 6 characters");
@@ -47,7 +50,7 @@ userSchema.statics.signup = async function (name, email, password) {
   const salt = await bcrypt.genSalt(10);
   const hash = await bcrypt.hash(password, salt);
 
-  const user = await this.create({ name,email, password: hash });
+  const user = await this.create({ name, email, password: hash });
 
   return user;
 };
@@ -58,7 +61,7 @@ userSchema.statics.login = async function (email, password) {
   if (!user) throw Error("Incorrect email");
   const match = await bcrypt.compare(password, user.password);
   if (!match) throw Error("Incorrect password");
-  console.log("now",user)
+  console.log("now", user);
   return user;
 };
 
