@@ -1,5 +1,5 @@
-import React from "react";
-import { Routes, Route, Navigate } from "react-router-dom";
+import React, { useMemo } from "react";
+import { Routes, Route, Navigate,useNavigate } from "react-router-dom";
 
 // pages & components
 import Home from "./pages/Home";
@@ -9,9 +9,13 @@ import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import { useAuth } from "./hooks/usAuth"
 
+
 function App() {
- const user = useAuth();
- console.log(user)
+//  const user = useAuth();
+const user = useAuth()
+ const navigate = useNavigate()
+ 
+
   return (
     <div className="App">
       <div className="pages">

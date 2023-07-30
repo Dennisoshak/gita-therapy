@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { setEvents } from "../actions/eventActions";
 import { useAppDispatch, useAppSelector } from "../hooks/redux-hooks";
-
+import { useTranslation } from "react-i18next";
 import { postEvent } from "../services/eventServer";
+import { t } from "i18next";
 
 const EventForm = () => {
   const [situation, setSituation] = useState("");
@@ -14,6 +15,8 @@ const EventForm = () => {
 
   const dispatch = useAppDispatch();
   const user = useAppSelector((state) => state.user);
+  const {t} = useTranslation()
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -22,7 +25,6 @@ const EventForm = () => {
       setError("You must be logged in");
       return;
     }
-  
     const event = { situation, thoughts, emotion, reaction};
     const response = await postEvent(event, user.token);
     if (response?.status === 200) {
@@ -41,9 +43,9 @@ const EventForm = () => {
 
   return (
     <form className="create" onSubmit={handleSubmit}>
-      <h3>Add a New Event</h3>
+      <h3>{t('add new event')}</h3>
 
-      <label>Situation:</label>
+      <label>{t("situation")}:</label>
       <input
         type="text"
         onChange={(e) => setSituation(e.target.value)}
@@ -51,7 +53,7 @@ const EventForm = () => {
         className={emptyFields?.includes("situation") ? "error" : ""}
       />
 
-      <label>Thoughts:</label>
+      <label>{t("thoughts")}:</label>
       <input
         type="text"
         onChange={(e) => setThoughts(e.target.value)}
@@ -59,14 +61,14 @@ const EventForm = () => {
         className={emptyFields?.includes("thoughts") ? "error" : ""}
       />
 
-      <label>Emotions (1-100):</label>
+      <label>{t("emotions")} (1-100):</label>
       <input
         type="number"
         onChange={(e) => setEmotions(e.target.value)}
         value={emotion}
         className={emptyFields?.includes("emotion") ? "error" : ""}
       />
-      <label>Reaction:</label>
+      <label>{t("reaction")}:</label>
       <input
         type="text"
         onChange={(e) => setREaction(e.target.value)}
@@ -74,7 +76,7 @@ const EventForm = () => {
         className={emptyFields?.includes("reaction") ? "error" : ""}
       />
 
-      <button style={{ width: "130px" }}>Add Event</button>
+      <button style={{ width: "130px" }}>{t("add event")}</button>
       {error && <div className="error">{error}</div>}
     </form>
   );

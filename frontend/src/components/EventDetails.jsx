@@ -6,7 +6,13 @@ import {  useAppSelector } from "../hooks/redux-hooks";
 const EventDetails = () => {
  
   const events = useAppSelector((state) => state.events);
-  console.log(events)
+  const formatDate=(d)=>{
+  const date = (new Date(d))
+    
+   return (date.getDate()+"/"+date.getMonth()+"/"+date.getFullYear())
+
+  }
+
   
 
   // const handleClick = async () => {
@@ -24,8 +30,8 @@ const EventDetails = () => {
           <tr>
             <th align="left"style={{width:"15%"}}>Situation </th>
             <th align="left">Thoughts</th>
-            <th align="left">Emotions(1-100)</th>
-            <th align="left">Act</th>
+            <th align="left">Emotions (1-100)</th>
+            <th >Act</th>
             <th align="left">Time</th>
           </tr>
         </thead>
@@ -41,7 +47,8 @@ const EventDetails = () => {
               <td align="left">{event.thoughts}</td>
               <td align="left">{event.emotion}</td>
               <td align="left"> {event.reaction}</td>
-              <td align="left"> {formatDistanceToNow(new Date(event.createdAt), { addSuffix: true })}</td>
+              <td align="left">{formatDate(event.createdAt)}</td>
+              {/* <td align="left"> {formatDistanceToNow(new Date(event.createdAt), { addSuffix: true })}</td> */}
             </tr>
           ))}
         </tbody>

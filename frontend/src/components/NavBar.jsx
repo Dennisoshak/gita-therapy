@@ -30,15 +30,15 @@ const {t,i18n} = useTranslation()
           <div className="nav-right">
            
            <select className="custom-select"  onChange={changeLanguageHandler}>
-        <option value="en" >English</option>
-        <option value="he" >Hebrew</option>
+        <option  value="en" >English</option>
+        <option value="he" >עברית</option>
       </select>
 
             <Menu slide right width={"30%"}>
               <a id="home" className="menu-item" href="/">{t("home")}
               </a>
               <a id="events" className="menu-item" href="/events">
-                Events and Responses
+                {t('events and responses')}
               </a>
               <a id="logout" className="logout" href="/login" onClick={(e)=>handleLogout(e)}>
                 Log Out
