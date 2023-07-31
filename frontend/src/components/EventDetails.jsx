@@ -1,6 +1,8 @@
-// date fns
-import formatDistanceToNow from "date-fns/formatDistanceToNow";
+import React from 'react';
+import { Table, Thead, Tbody, Tr, Th, Td } from 'react-super-responsive-table';
+import 'react-super-responsive-table/dist/SuperResponsiveTableStyle.css';
 import {  useAppSelector } from "../hooks/redux-hooks";
+import { useTranslation } from "react-i18next";
 
 
 const EventDetails = () => {
@@ -8,51 +10,44 @@ const EventDetails = () => {
   const events = useAppSelector((state) => state.events);
   const formatDate=(d)=>{
   const date = (new Date(d))
-    
    return (date.getDate()+"/"+date.getMonth()+"/"+date.getFullYear())
 
   }
+  const { t,i18n } = useTranslation();
+  const direction = i18n.dir();
 
   
-
-  // const handleClick = async () => {
-  //   if (!user) return;
-  //   await deleteEvent(event._id, user.token);
-  //   dispatch(setEvents(user.token));
-  // };
-
-
   
   return (
-    <div className="event-details">
-      <table sx={{minWidth:700}}  aria-label="simple table">
-        <thead>
-          <tr>
-            <th align="left"style={{width:"15%"}}>Situation </th>
-            <th align="left">Thoughts</th>
-            <th align="left">Emotions (1-100)</th>
-            <th >Act</th>
-            <th align="left">Time</th>
-          </tr>
-        </thead>
-        <tbody>
+    <div className="event-details" style={{direction:direction}}>
+      <Table sx={{minWidth:700}}  aria-label="simple table">
+        <Thead>
+          <Tr>
+            <Th style={{width:"15%"}}>{t('situation')} </Th>
+            <Th >{t('thoughts')}</Th>
+            <Th >{t('emotions')}<div style={{fontSize:"12px"}}>(1-100)</div></Th>
+            <Th >{t('reaction')}</Th>
+            <Th>{t('time')}</Th>
+          </Tr>
+        </Thead>
+        <Tbody>
           {events[0] && events.map((event) => (
-            <tr
+            <Tr
               key={event._id}
               sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
             >
-              <td component="th" >
+              <Td component="th" >
                 {event.situation}
-              </td>
-              <td align="left">{event.thoughts}</td>
-              <td align="left">{event.emotion}</td>
-              <td align="left"> {event.reaction}</td>
-              <td align="left">{formatDate(event.createdAt)}</td>
+              </Td>
+              <Td align="left">{event.thoughts}</Td>
+              <Td align="left">{event.emotion}</Td>
+              <Td align="left"> {event.reaction}</Td>
+              <Td align="left">{formatDate(event.createdAt)}</Td>
               {/* <td align="left"> {formatDistanceToNow(new Date(event.createdAt), { addSuffix: true })}</td> */}
-            </tr>
+            </Tr>
           ))}
-        </tbody>
-      </table>
+        </Tbody>
+      </Table>
     </div>
   );
 };

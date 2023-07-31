@@ -41,7 +41,7 @@ const {t,i18n} = useTranslation()
                 {t('events and responses')}
               </a>
               <a id="logout" className="logout" href="/login" onClick={(e)=>handleLogout(e)}>
-                Log Out
+                {t("logout")}
               </a>
             </Menu>
           </div>

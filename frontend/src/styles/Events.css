@@ -47,8 +47,10 @@ margin-top: 3rem;
   }
 
   td{
+    background: #f1f1f1;
+    font-size: 13px;
+    border: 1px solid #f1f1f1 ;
     padding: 5px;
-    background-color: aliceblue;
     height: 120px;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -63,7 +65,7 @@ margin-top: 3rem;
      text-align: center;
   }
   td:nth-child(3) {
-     width: 2%;
+     width: 8%;
      text-align: center;
   }
   td:nth-child(4) {
@@ -92,6 +94,11 @@ margin-top: 3rem;
   background-color: #ada0a0;
 }
 
+.responsiveTable tbody tr  {
+  background: #f1f1f1;
+
+}
+
   @media (max-width: 600px) {
     .events {
       flex-direction: column;
@@ -99,4 +106,18 @@ margin-top: 3rem;
     .event-details, .create {
       width: 96%;
     }
+  }
+
+  @media screen and (max-width: 40em){
+  .custom-select {
+    font-size: 10px;
+    width: 120%;
+  }
+.responsiveTable td.pivoted {
+  width: 45%;
+  overflow-y: auto;
+}
+.responsiveTable td .tdBefore {
+  width: calc(35% - 20px);
+}
   }

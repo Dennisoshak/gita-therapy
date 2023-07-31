@@ -10,5 +10,7 @@
 "reaction":"Reaction",
 "act":"Act",
 "add event":"Add event",
-"events list":"Events list"
+"events list":"Events list",
+"time":"Time",
+"logout":"Logout"
 }

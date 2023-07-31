@@ -12,7 +12,7 @@ export const useAuth = () => {
   const navigate = useNavigate()
 
   useEffect(() => {
- const isExpired = isTokenExpired(userData.token)
+ const isExpired = isTokenExpired(userData?.token)
  if (isExpired) {
   navigate("/login")
   return
