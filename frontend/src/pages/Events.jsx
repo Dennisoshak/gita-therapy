@@ -15,6 +15,7 @@ const Events = () => {
   const dispatch = useAppDispatch();
   const user = useAppSelector((state) => state.user);
   const error = useAppSelector((state) => state.error);
+  const language = useAppSelector((state) => state.language)
   const navigate = useNavigate();
 
   const validateToken = () => {
@@ -36,7 +37,7 @@ const Events = () => {
   const { t,i18n } = useTranslation();
   const direction = i18n.dir();
   return (
-    <div className="events" style={{ direction: direction }}>
+    <div className="events" style={{ direction: language.direction }}>
       <div className="event-tabs">
         <div
           onClick={() => setTab(1)}

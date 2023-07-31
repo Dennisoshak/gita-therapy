@@ -5,7 +5,10 @@ import { slide as Menu } from "react-burger-menu";
 import { useTranslation } from "react-i18next";
 import TextDisplay from "./TextDisplay";
 import "../styles/Menu.css";
+import { setLanguage } from "../store/mainSlice";
+import { useState } from "react";
 const NavBar = () => {
+  const [open,setOpen]=useState(false)
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
 const {t,i18n} = useTranslation()
@@ -17,8 +20,10 @@ const {t,i18n} = useTranslation()
   };
 
   const changeLanguageHandler = (e) => {
-    const languageValue = e.target.value
-    i18n.changeLanguage(languageValue);
+    const lng = e.target.value
+    const direction = lng === 'he'?'rtl':'ltr'
+   dispatch(setLanguage({lng:lng,direction:direction}))
+   i18n.changeLanguage(lng);
   }
   return (
     <header>
@@ -34,10 +39,10 @@ const {t,i18n} = useTranslation()
         <option value="he" >עברית</option>
       </select>
 
-            <Menu slide right width={"30%"}>
-              <a id="home" className="menu-item" href="/">{t("home")}
+            <Menu slide right width={"30%"}isOpen={open} onOpen={()=>setOpen(true)}>
+              <a id="home" className="menu-item" onClick={()=>{setOpen(()=>false);navigate('/');}}>{t("home")}
               </a>
-              <a id="events" className="menu-item" href="/events">
+              <a id="events" className="menu-item" onClick={()=>{setOpen(()=>false);navigate('/events');}}>
                 {t('events and responses')}
               </a>
               <a id="logout" className="logout" href="/login" onClick={(e)=>handleLogout(e)}>

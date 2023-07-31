@@ -89,6 +89,8 @@
 .menu-item {
   color: azure;
   margin: 1rem 0;
+  cursor: pointer;
+
 }
 .menu-item:hover,
 .nav-logout:hover,

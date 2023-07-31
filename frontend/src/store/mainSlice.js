@@ -33,7 +33,21 @@ export const loadSlice = createSlice({
     },
   }
 })
+export const languageSlice = createSlice({
+  name: "language",
+  initialState: {lng:"eng",
+  direction:"ltr"
+},
+  reducers: {
+    setLanguage(state, action) {
+      return action.payload
+    },
+  }
+})
+
 
 export const {setError } = errorSlice.actions;
 export const {setIsLoading } = loadSlice.actions;
+export const {setLanguage } = languageSlice.actions;
+
 
