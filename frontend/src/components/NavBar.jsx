@@ -25,6 +25,7 @@ const {t,i18n} = useTranslation()
    dispatch(setLanguage({lng:lng,direction:direction}))
    i18n.changeLanguage(lng);
   }
+  console.log(open)
   return (
     <header>
       <div className="nav">
@@ -39,7 +40,7 @@ const {t,i18n} = useTranslation()
         <option value="he" >עברית</option>
       </select>
 
-            <Menu slide right width={"30%"}isOpen={open} onOpen={()=>setOpen(true)}>
+            <Menu slide right width={"30%"}isOpen={open}onClose={()=>setOpen(false)} onOpen={()=>setOpen(true)}>
               <a id="home" className="menu-item" onClick={()=>{setOpen(()=>false);navigate('/');}}>{t("home")}
               </a>
               <a id="events" className="menu-item" onClick={()=>{setOpen(()=>false);navigate('/events');}}>
