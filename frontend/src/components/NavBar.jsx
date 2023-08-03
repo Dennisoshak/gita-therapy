@@ -25,7 +25,6 @@ const {t,i18n} = useTranslation()
    dispatch(setLanguage({lng:lng,direction:direction}))
    i18n.changeLanguage(lng);
   }
-  console.log(open)
   return (
     <header>
       <div className="nav">

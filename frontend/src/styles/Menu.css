@@ -94,8 +94,10 @@
 }
 .menu-item:hover,
 .nav-logout:hover,
+.nav-login:hover,
 .title:hover {
   color: rgb(161, 74, 89);
+  transform:rotate(20%)
 }
 
 @media screen and (max-width: 40em){

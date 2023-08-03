@@ -26,6 +26,14 @@ const EventForm = () => {
       return;
     }
     const event = { situation, thoughts, emotion, reaction};
+    if (!situation || !thoughts || !emotion || !reaction){ 
+      setError(t('missing field'));
+    return;
+  }
+  if (emotion<1||emotion>100) {
+    setError(t('emotions range'))
+    return
+  }
     const response = await postEvent(event, user.token);
     if (response?.status === 200) {
       setEmotions("");
