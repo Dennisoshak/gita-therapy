@@ -1,14 +1,13 @@
 .title {
   font-family: "Dancing Script";
+  color: rgb(161, 74, 89);
   font-size: 5em;
-  color: rgb(7, 7, 7);
   margin-left: 12px;
 }
 
 .nav {
   display: flex;
   align-items: center;
-  justify-content: space-between;
   width: 100%;
   /* height: fit-content; */
 }
@@ -27,12 +26,18 @@
   top: 32px;
 }
 .nav-right {
-  margin-right: 10%;
-  color: white;
-  text-shadow: 1px 1px black;
-  font-size: 18px;
-  font-weight: 600;
+  display: flex;
+  margin-left: 15%;
+ 
 }
+.header-item {
+  border: none;
+      font-weight: 600;
+      font-size: 18px;
+      cursor: pointer;
+      margin: 0 1rem;
+  }
+  
 .user-name {
   margin-right: 3rem;
   font-size: 3rem;
@@ -62,7 +67,6 @@
   overflow: hidden !important;
 }
 
-/* Morph shape necessary with bubble or elastic */
 .bm-morph-shape {
   fill: #373a47;
 }
@@ -70,13 +74,11 @@
   background: #bdc3c7;
 }
 
-/* Wrapper for item list */
 .bm-item-list {
   color: #b8b7ad;
   padding: 0.8em;
 }
 
-/* Individual item */
 .bm-item {
   display: inline-block;
 }
@@ -95,14 +97,26 @@
 .menu-item:hover,
 .nav-logout:hover,
 .nav-login:hover,
-.title:hover {
+.header-item:hover {
   color: rgb(161, 74, 89);
-  transform:rotate(20%)
+  transform:scale(1.1)
+}
+
+.custom-select{
+  background: inherit;
+  padding: 4px;
+  border-radius: 4px;
+position: absolute;
+right: 10%;  
+box-shadow: 0px 2px 4px 0px #00000040;
 }
 
 @media screen and (max-width: 40em){
 .bm-menu {
   font-size: 14px;
   padding-left: 5px;
+}
+.custom-select{
+  width: 4rem;
 }
 }

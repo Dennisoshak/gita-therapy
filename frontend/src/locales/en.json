@@ -14,5 +14,6 @@
 "time":"Time",
 "logout":"Logout",
 "missing field":"Please fill all fields",
-"emotions range":"Emotion rate must be between 1 and 100"
+"emotions range":"Emotion rate must be between 1 and 100",
+"videos":"Videos"
 }

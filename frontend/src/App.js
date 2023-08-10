@@ -4,10 +4,11 @@ import { Routes, Route, Navigate,useNavigate } from "react-router-dom";
 // pages & components
 import Home from "./pages/Home";
 import Events from "./pages/Events";
-import Navbar from "./components/NavBar";
+import Navbar from "./components/Header";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import { useAuth } from "./hooks/usAuth"
+import Videos from "./pages/Videos";
 
 
 function App() {
@@ -23,9 +24,10 @@ const user = useAuth()
         <Routes>
           <Route
             path="/"
-            element={user ? <Home /> : <Navigate to="/login" />}
+            element={ <Home /> }
           />
           <Route path="/events" element={user && <Events />} />
+          <Route path="/videos" element={user && <Videos />} />
           <Route
             path="/signup"
             element={!user ? <Signup /> : <Navigate to="/" />}

@@ -14,6 +14,7 @@
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^6.3.6",
     "nodemon": "^2.0.20",
+    "react-device-detect": "^2.2.3",
     "react-i18next": "^13.0.2",
     "validator": "^13.7.0"
   },
