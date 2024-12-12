@@ -6,19 +6,25 @@ import { isTokenExpired } from "../services/authServer";
 import { useNavigate } from "react-router-dom";
 
 export const useAuth = () => {
-  const userData = JSON.parse(localStorage.getItem("user"));
+  const getUserData = () => {
+    const userFromStorage = localStorage.getItem("user");
+    if (!userFromStorage || userFromStorage === "undefined") return "";
+
+    return JSON.parse(userFromStorage);
+  };
   const user = useAppSelector((state) => state.user);
   const dispatch = useDispatch();
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   useEffect(() => {
- const isExpired = isTokenExpired(userData?.token)
- if (isExpired) {
-  navigate("/login")
-  return
- }
+    const userData = getUserData();
+
+    const isExpired = isTokenExpired(userData?.token);
+    if (isExpired) {
+      navigate("/login");
+      return;
+    }
     dispatch(setUser(userData));
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return user;

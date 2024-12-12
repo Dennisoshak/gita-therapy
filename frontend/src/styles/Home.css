@@ -23,18 +23,16 @@
   font-weight: 700;
   font-size: 18px;
   padding-bottom: 2rem;
-
 }
-
 
 .about {
   margin: 0 1rem 0 10%;
-  display:flex;
+  display: flex;
   flex-direction: row;
   column-gap: 2rem;
 }
 
-.gita-img{
+.gita-img {
   width: 100%;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   border-radius: 2%;
@@ -42,13 +40,13 @@
 .about-text {
   width: 80%;
 }
-.logout{
+.logout {
   position: absolute;
   bottom: 2rem;
 }
 
 @media (max-width: 700px) {
   .about {
-    flex-direction:column ;
+    flex-direction: column;
   }
 }
