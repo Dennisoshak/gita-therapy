@@ -15,7 +15,7 @@ const Events = () => {
   const dispatch = useAppDispatch();
   const user = useAppSelector((state) => state.user);
   const error = useAppSelector((state) => state.error);
-  const language = useAppSelector((state) => state.language)
+  const language = useAppSelector((state) => state.language);
   const navigate = useNavigate();
 
   const validateToken = () => {
@@ -23,6 +23,7 @@ const Events = () => {
       navigate("/login");
     } else return;
   };
+
   useEffect(() => {
     if (user) {
       dispatch(setEvents());
@@ -30,11 +31,9 @@ const Events = () => {
     console.log(error);
 
     validateToken();
-
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const { t,i18n } = useTranslation();
+  const { t, i18n } = useTranslation();
   const direction = i18n.dir();
   return (
     <div className="events" style={{ direction: language.direction }}>
@@ -43,13 +42,13 @@ const Events = () => {
           onClick={() => setTab(1)}
           className={tab === 1 ? "tab selected" : "tab"}
         >
-          {t('add event')}
+          {t("add event")}
         </div>
         <div
           onClick={() => setTab(2)}
           className={tab === 2 ? "tab selected" : "tab"}
         >
-        {t('events list')}
+          {t("events list")}
         </div>
       </div>
       {tab === 1 ? <EventForm /> : <EventDetails />}

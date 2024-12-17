@@ -2,9 +2,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;800&family=VT323&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Bangers&family=Dancing+Script:wght@500&family=Red+Hat+Display&display=swap");
 @font-face {
-	font-family: 'Righteous', cursive;
-	src: url('https://fonts.googleapis.com/css2?family=Alef:wght@700&family=Righteous&display=swap');
-	unicode-range: U+0370-03FF, U+1F00-1FFF;
+  font-family: "Righteous", cursive;
+  src: url("https://fonts.googleapis.com/css2?family=Alef:wght@700&family=Righteous&display=swap");
+  unicode-range: U+0370-03FF, U+1F00-1FFF;
 }
 /* layout */
 :root {
@@ -120,10 +120,16 @@ input:focus {
   outline: 2px solid #5c5c64;
 }
 
-
 .footer-container {
   height: 8rem;
   background-color: #5c5c64;
-  position:absolute;
-  bottom:0
+  position: absolute;
+  bottom: 0;
+}
+
+@media screen and (max-width: 550px) {
+  form.signup,
+  form.login {
+    width: 82%;
+  }
 }
