@@ -107,11 +107,7 @@ td:nth-child(5) {
   }
 }
 
-@media screen and (max-width: 40em) {
-  .custom-select {
-    font-size: 10px;
-    width: 120%;
-  }
+@media screen and (max-width: 450px) {
   .responsiveTable td.pivoted {
     width: 45%;
     overflow-y: auto;

@@ -4,7 +4,6 @@ import { getLogout } from "../actions/authActions";
 import { slide as Menu } from "react-burger-menu";
 import { useTranslation } from "react-i18next";
 import TextDisplay from "./TextDisplay";
-import { isMobile } from "react-device-detect";
 import "../styles/Menu.css";
 import { setLanguage } from "../store/mainSlice";
 import { useState } from "react";
@@ -61,6 +60,7 @@ const NavBar = () => {
                 id="events"
                 className="menu-item"
                 onClick={() => {
+                  console.log("oi");
                   setOpen(() => false);
                   navigate("/events");
                 }}

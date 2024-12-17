@@ -7,7 +7,6 @@ const eventRoutes = require("./routes/events");
 const userRoutes = require("./routes/user");
 const env = require("dotenv").config();
 
-// express app
 const app = express();
 const PORT = process.env.PORT || 4000;
 const mongoURI = process.env.MONGO_URI;
