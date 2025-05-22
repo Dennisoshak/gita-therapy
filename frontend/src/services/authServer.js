@@ -1,11 +1,10 @@
 import axios from "axios";
 
-const baseURL =
-  process.env.NODE_ENV === "development" ? process.env.REACT_APP_BASEURL : "";
+const baseURL = process.env.REACT_APP_API_URL
 
 export const sendSignUp = async (name, email, password) => {
   try {
-    const response = await axios.post(`${baseURL}/api/user/signup`, {
+    const response = await axios.post(`${baseURL}/user/signup`, {
       name,
       email,
       password,
@@ -18,7 +17,7 @@ export const sendSignUp = async (name, email, password) => {
 };
 export const sendLogin = async (email, password) => {
   try {
-    const response = await axios.post(`${baseURL}/api/user/login`, {
+    const response = await axios.post(`${baseURL}/user/login`, {
       email,
       password,
     });

@@ -5,13 +5,13 @@ export const authSlice = createSlice({
   initialState: null,
   reducers: {
     login(state, action) {
-      return action.payload;
+      return action.payload ?? null;
     },
     setUser(state, action) {
-      return action.payload;
+      return action.payload ?? null;
     },
     signUp(state, action) {
-      return action.payload;
+      return action.payload ?? null;
     },
     logout: () => null,
   },

@@ -6,7 +6,7 @@ export const fetchEvents = async () => {
   try {
     const token = JSON.parse(localStorage.getItem("user")).token;
 
-    const response = await axios.get(`${baseURL}/api/events/all`, {
+    const response = await axios.get(`${baseURL}/events/all`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -23,7 +23,7 @@ export const deleteEvent = async (id) => {
   try {
     const token = JSON.parse(localStorage.getItem("user")).token;
 
-    const response = await axios.delete(`${baseURL}/api/events/${id}`, {
+    const response = await axios.delete(`${baseURL}/events/${id}`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -38,7 +38,7 @@ export const postEvent = async (event, token) => {
   try {
     const token = JSON.parse(localStorage.getItem("user")).token;
 
-    const response = await axios.post(`${baseURL}/api/events`, event, {
+    const response = await axios.post(`${baseURL}/events`, event, {
       headers: {
         Authorization: `Bearer ${token}`,
       },

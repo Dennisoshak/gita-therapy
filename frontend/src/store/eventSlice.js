@@ -5,7 +5,7 @@ export const eventSlice = createSlice({
   initialState: [],
   reducers: {
     setAllEvents(state, action) {
-      return action.payload;
+      return action.payload ?? [];
     },
   },
 });

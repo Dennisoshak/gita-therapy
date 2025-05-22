@@ -20,7 +20,7 @@ export const errorSlice = createSlice({
   initialState: "",
   reducers: {
     setError(state, action) {
-      return action.payload;
+      return action.payload ?? "";
     },
   },
 });
@@ -30,7 +30,7 @@ export const loadSlice = createSlice({
   initialState: false,
   reducers: {
     setIsLoading(state, action) {
-      return action.payload;
+      return action.payload ?? false;
     },
   },
 });
