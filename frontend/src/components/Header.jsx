@@ -90,11 +90,11 @@ const NavBar = () => {
         )}
 
         {!user && (
-          <div className="nav-right">
-            <Link className="nav-login" to="/login">
+          <div className="nav-auth-buttons">
+            <Link className="auth-btn login-btn" to="/login" aria-label="Login">
               Login
             </Link>
-            <Link className="nav-logout" to="/signup">
+            <Link className="auth-btn signup-btn" to="/signup" aria-label="Signup">
               Signup
             </Link>
           </div>
