@@ -6,10 +6,12 @@ import EventForm from "../components/EventForm";
 import { useAppDispatch, useAppSelector } from "../hooks/redux-hooks";
 import { setEvents } from "../actions/eventActions";
 import { useNavigate } from "react-router-dom";
+import { useAuth } from "../hooks/usAuth";
 import { useTranslation } from "react-i18next";
 // import { useAuth } from "../hooks/usAuth";
 
 const Events = () => {
+  useAuth();
   const [tab, setTab] = useState(1);
 
   const dispatch = useAppDispatch();
