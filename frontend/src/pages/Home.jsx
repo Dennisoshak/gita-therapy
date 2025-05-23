@@ -1,6 +1,6 @@
 import React from "react";
 import "../styles/Home.css";
-import gita from "../assets/gita.jpg";
+import gitaImg from "../assets/GitaComics.jpg";
 import { useTranslation } from "react-i18next";
 
 const Home = () => {
@@ -11,7 +11,7 @@ const Home = () => {
       <h1 style={{ margin: "2rem" }}>{t("about-me")}</h1>
       <div className="about">
         <div>
-          <img src={gita} alt="" className="gita-img" />
+          <img src={gitaImg} alt="" className="gita-img" />
         </div>
         <div className="about-text">{t("about-me-text")}</div>
       </div>
