@@ -53,7 +53,7 @@ const Login = () => {
           Sign up
         </span>
       </p>
-      <button>Log in</button>
+      <button className="auth-btn login-btn btn-width">Log in</button>
       {error && <div className="error">{error}</div>}
     </form>
   );

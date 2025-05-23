@@ -56,6 +56,10 @@ header a {
   box-shadow: 0px 4px 10px 0px #00000040;
 }
 
+.btn-width {
+  width: 8rem !important;
+}
+
 /* new event form */
 label,
 input {
@@ -113,7 +117,6 @@ form.login {
   margin: 40px auto;
   padding: 20px;
   border-radius: 8px;
-  background: #c3c4e3;
   box-shadow: 0px 4px 10px 0px #00000040;
 }
 input:focus {

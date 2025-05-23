@@ -51,7 +51,7 @@ const Signup = () => {
         }}
         value={password}
       />
-      <button>Sign Up</button>
+      <button className="auth-btn signup-btn btn-width">Sign Up</button>
       {error && <div className="error">{error}</div>}
     </form>
   );
