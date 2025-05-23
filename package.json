@@ -23,7 +23,6 @@
     "start": "node backend/server.js",
     "predeploy": "npm run build",
     "build": "cd frontend && npm run build"
-}
   },
   "engines": {
     "node": "18.16.0"

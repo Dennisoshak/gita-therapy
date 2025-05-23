@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/static/css/main.d725a929.css",
-    "main.js": "/static/js/main.5575e8be.js",
-    "static/media/gita.jpg": "/static/media/gita.34ba1d6838b09a179fb1.jpg",
+    "main.css": "/static/css/main.62fd90b1.css",
+    "main.js": "/static/js/main.6390ca82.js",
+    "static/media/GitaComics.jpg": "/static/media/GitaComics.a42212e579be6c34192c.jpg",
     "index.html": "/index.html",
-    "main.d725a929.css.map": "/static/css/main.d725a929.css.map",
-    "main.5575e8be.js.map": "/static/js/main.5575e8be.js.map"
+    "main.62fd90b1.css.map": "/static/css/main.62fd90b1.css.map",
+    "main.6390ca82.js.map": "/static/js/main.6390ca82.js.map"
   },
   "entrypoints": [
-    "static/css/main.d725a929.css",
-    "static/js/main.5575e8be.js"
+    "static/css/main.62fd90b1.css",
+    "static/js/main.6390ca82.js"
   ]
 }
