@@ -21,7 +21,7 @@ const Login = () => {
 
   useEffect(() => {
     dispatch(setError(""));
-    user && navigate("/");
+    if (user) navigate("/events");
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [navigate, user]);
 

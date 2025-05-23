@@ -11,7 +11,6 @@ import { useAuth } from "./hooks/usAuth";
 import Videos from "./pages/Videos";
 
 function App() {
-  const user = useAuth();
   const navigate = useNavigate();
 
   return (
@@ -20,15 +19,15 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/events" element={user && <Events />} />
-          <Route path="/videos" element={user && <Videos />} />
+          <Route path="/events" element={<Events />} />
+          <Route path="/videos" element={<Videos />} />
           <Route
             path="/signup"
-            element={!user ? <Signup /> : <Navigate to="/" />}
+            element={<Signup />}
           />
           <Route
             path="/login"
-            element={!user ? <Login /> : <Navigate to="/" />}
+            element={<Login />}
           />
         </Routes>
       </div>
