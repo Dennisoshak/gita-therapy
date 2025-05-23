@@ -173,6 +173,16 @@ td:nth-child(5) {
   outline: 2px solid #a14a59;
 }
 
+.form-btn{
+  width: 8rem;
+  cursor: pointer;
+  background: transparent;
+  font-weight: 600;
+  border-radius: 1rem;
+  font-size: 1.07em;
+  background-color: #a14a59;
+}
+
 @media (max-width: 600px) {
   font-size: 0.98em;
   min-width: 520px;

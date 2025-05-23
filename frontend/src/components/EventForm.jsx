@@ -84,7 +84,7 @@ const EventForm = () => {
         className={emptyFields?.includes("reaction") ? "error" : ""}
       />
 
-      <button style={{ width: "130px" }}>{t("add event")}</button>
+      <button className="form-btn">{t("add event")}</button>
       {error && <div className="error">{error}</div>}
     </form>
   );
