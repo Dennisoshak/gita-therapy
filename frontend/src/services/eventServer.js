@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const baseURL = process.env.NODE_ENV === 'development'? process.env.REACT_APP_BASEURL : ''
+const baseURL = process.env.NODE_ENV === 'development'? process.env.REACT_APP_API_URL : ''
 
 export const fetchEvents = async () => {
   try {
@@ -18,6 +18,7 @@ console.log(response)
     return error;
   }
 };
+console.log(baseURL);
 
 export const deleteEvent = async (id) => {
   try {
