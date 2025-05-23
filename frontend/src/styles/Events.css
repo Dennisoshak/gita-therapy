@@ -79,16 +79,50 @@ td:nth-child(5) {
 .event-tabs {
   display: flex;
   justify-content: center;
-  font-weight: 600;
+  gap: 1.2rem;
   margin-bottom: 2rem;
+  background: #f7f6fa;
+  border-radius: 2em;
+  padding: 0.25em 0.5em;
+  box-shadow: 0 2px 8px 0 #0001;
 }
+
 .tab {
   cursor: pointer;
-  border: 2px solid black;
-  border-bottom: none;
-  border-radius: 6px 6px 0 0;
-  padding: 5px 8px;
+  border: none;
+  outline: none;
+  background: transparent;
+  padding: 0.7em 2.2em;
+  border-radius: 2em;
+  font-weight: 600;
+  font-size: 1.07em;
+  color: #a14a59;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+  box-shadow: none;
 }
+
+.tab.selected,
+.tab[aria-selected='true'] {
+  background: #a14a59;
+  color: #fff;
+  box-shadow: 0 4px 16px 0 #a14a5922;
+}
+
+.tab:focus {
+  outline: 2px solid #a14a59;
+}
+
+@media (max-width: 600px) {
+  .event-tabs {
+    gap: 0.4rem;
+    padding: 0.1em 0.2em;
+  }
+  .tab {
+    font-size: 0.98em;
+    padding: 0.6em 1.2em;
+  }
+}
+
 .selected {
   background-color: #ada0a0;
 }

@@ -39,16 +39,24 @@ const Events = () => {
   const direction = i18n.dir();
   return (
     <div className="events" style={{ direction: language.direction }}>
-      <div className="event-tabs">
+      <div className="event-tabs" role="tablist">
         <div
-          onClick={() => setTab(1)}
+          role="tab"
+          tabIndex={0}
+          aria-selected={tab === 1}
           className={tab === 1 ? "tab selected" : "tab"}
+          onClick={() => setTab(1)}
+          onKeyDown={e => (e.key === 'Enter' || e.key === ' ') && setTab(1)}
         >
           {t("add event")}
         </div>
         <div
-          onClick={() => setTab(2)}
+          role="tab"
+          tabIndex={0}
+          aria-selected={tab === 2}
           className={tab === 2 ? "tab selected" : "tab"}
+          onClick={() => setTab(2)}
+          onKeyDown={e => (e.key === 'Enter' || e.key === ' ') && setTab(2)}
         >
           {t("events list")}
         </div>
