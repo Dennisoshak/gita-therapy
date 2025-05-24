@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { getLogin } from "../actions/authActions";
-import { useAppDispatch, useAppSelector } from "../hooks/redux-hooks";
-import { setError } from "../store/mainSlice";
+import { getLogin } from "../../actions/authActions";
+import { useAppDispatch, useAppSelector } from "../../hooks/redux-hooks";
+import { setError } from "../../store/mainSlice";
 
 const Login = () => {
   const [email, setEmail] = useState("");

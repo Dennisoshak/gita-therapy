@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { getSignUp } from "../actions/authActions";
-import { useAppSelector, useAppDispatch } from "../hooks/redux-hooks";
+import { getSignUp } from "../../actions/authActions";
+import { useAppSelector, useAppDispatch } from "../../hooks/redux-hooks";
 import { useNavigate } from "react-router-dom";
-import { setError } from "../store/mainSlice";
+import { setError } from "../../store/mainSlice";
 
 const Signup = () => {
   const [email, setEmail] = useState("");
@@ -58,3 +58,4 @@ const Signup = () => {
 };
 
 export default Signup;
+// Moved from Signup.jsx

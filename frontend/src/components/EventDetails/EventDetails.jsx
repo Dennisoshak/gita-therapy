@@ -1,7 +1,7 @@
 import React from 'react';
 import { Table, Thead, Tbody, Tr, Th, Td } from 'react-super-responsive-table';
 import 'react-super-responsive-table/dist/SuperResponsiveTableStyle.css';
-import {  useAppSelector } from "../hooks/redux-hooks";
+import {  useAppSelector } from '../../hooks/redux-hooks';
 import { useTranslation } from "react-i18next";
 
 

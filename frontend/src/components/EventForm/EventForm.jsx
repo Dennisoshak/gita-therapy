@@ -1,8 +1,8 @@
 import { useState } from "react";
-import { setEvents } from "../actions/eventActions";
-import { useAppDispatch, useAppSelector } from "../hooks/redux-hooks";
+import { setEvents } from '../../actions/eventActions';
+import { useAppDispatch, useAppSelector } from '../../hooks/redux-hooks';
 import { useTranslation } from "react-i18next";
-import { postEvent } from "../services/eventServer";
+import { postEvent } from '../../services/eventServer';
 import { t } from "i18next";
 
 const EventForm = () => {

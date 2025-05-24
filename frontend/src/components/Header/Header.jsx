@@ -1,13 +1,13 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { useAppDispatch, useAppSelector } from "../hooks/redux-hooks";
-import { getLogout } from "../actions/authActions";
+import { useState } from "react";
+import { useAppDispatch, useAppSelector } from "../../hooks/redux-hooks";
+import { getLogout } from "../../actions/authActions";
 import { slide as Menu } from "react-burger-menu";
 import { useTranslation } from "react-i18next";
-import TextDisplay from "./TextDisplay";
-import "../styles/Menu.css";
-import { setLanguage } from "../store/mainSlice";
-import { useState } from "react";
-const NavBar = () => {
+import TextDisplay from "../TextDisplay/TextDisplay";
+import "../../styles/Menu.css";
+import { setLanguage } from "../../store/mainSlice";
+const Navbar = () => {
   const [open, setOpen] = useState(false);
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
@@ -104,4 +104,4 @@ const NavBar = () => {
   );
 };
 
-export default NavBar;
+export default Navbar;

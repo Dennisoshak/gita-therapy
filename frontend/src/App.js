@@ -1,14 +1,11 @@
 import React, { useMemo } from "react";
 import { Routes, Route, Navigate, useNavigate } from "react-router-dom";
-
-// pages & components
-import Home from "./pages/Home";
-import Events from "./pages/Events";
-import Navbar from "./components/Header";
-import Login from "./pages/Login";
-import Signup from "./pages/Signup";
-import { useAuth } from "./hooks/usAuth";
-import Videos from "./pages/Videos";
+import Navbar from "./components/Header/Header";
+import Home from "./pages/Home/Home";
+import Events from "./pages/Events/Events";
+import Login from "./pages/Login/Login";
+import Signup from "./pages/Signup/Signup";
+import Videos from "./pages/Videos/Videos";
 
 function App() {
   const navigate = useNavigate();

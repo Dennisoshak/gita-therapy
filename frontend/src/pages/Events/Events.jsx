@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
-import "../styles/Events.css";
+import "../../styles/Events.css";
 
-import EventDetails from "../components/EventDetails";
-import EventForm from "../components/EventForm";
-import { useAppDispatch, useAppSelector } from "../hooks/redux-hooks";
-import { setEvents } from "../actions/eventActions";
+import EventDetails from "../../components/EventDetails/EventDetails";
+import EventForm from "../../components/EventForm/EventForm";
+import { useAppDispatch, useAppSelector } from "../../hooks/redux-hooks";
+import { setEvents } from "../../actions/eventActions";
 import { useNavigate } from "react-router-dom";
-import { useAuth } from "../hooks/usAuth";
+import { useAuth } from "../../hooks/usAuth";
 import { useTranslation } from "react-i18next";
 // import { useAuth } from "../hooks/usAuth";
 
@@ -33,7 +33,7 @@ const Events = () => {
     console.log(error);
 
     validateToken();
-  }, []);
+  }, [user]);
 
   const { t, i18n } = useTranslation();
   const direction = i18n.dir();
