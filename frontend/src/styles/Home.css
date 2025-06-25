@@ -39,10 +39,6 @@
 .about-text {
   width: 80%;
 }
-.logout {
-  position: absolute;
-  bottom: 2rem;
-}
 
 @media (max-width: 700px) {
   .about {

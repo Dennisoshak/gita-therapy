@@ -3,7 +3,7 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
 import store from "./store";
-import './i18'
+import "./i18";
 import { Provider } from "react-redux";
 import { BrowserRouter } from "react-router-dom";
 
@@ -15,5 +15,5 @@ root.render(
         <App />
       </Provider>
     </BrowserRouter>
-  </React.StrictMode>
+  </React.StrictMode>,
 );

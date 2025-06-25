@@ -1,6 +1,9 @@
 import axios from "axios";
 
-const baseURL = process.env.NODE_ENV === 'development'? process.env.REACT_APP_BASE_URL : '/api'
+const baseURL =
+  process.env.NODE_ENV === "development"
+    ? process.env.REACT_APP_BASE_URL
+    : "/api";
 
 export const fetchEvents = async () => {
   try {
@@ -11,10 +14,10 @@ export const fetchEvents = async () => {
         Authorization: `Bearer ${token}`,
       },
     });
-console.log(response)
+    console.log(response);
     return response;
   } catch (error) {
-    console.log(error)
+    console.log(error);
     return error;
   }
 };

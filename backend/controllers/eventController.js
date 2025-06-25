@@ -3,9 +3,9 @@ const mongoose = require("mongoose");
 
 const getAllEvents = async (req, res) => {
   const user_id = req.user._id;
-console.log(user_id)
+  console.log(user_id);
   const events = await Event.find({ user_id }).sort({ createdAt: -1 });
-  res.set('Content-Type', 'application/json');
+  res.set("Content-Type", "application/json");
   res.status(200).json(events);
 };
 
@@ -22,7 +22,7 @@ const getEventById = async (req, res) => {
 };
 
 const createEvent = async (req, res) => {
-  const { situation, thoughts, emotion,reaction } = req.body;
+  const { situation, thoughts, emotion, reaction } = req.body;
   let emptyFields = [];
   if (!situation) emptyFields.push("situation");
   if (!thoughts) emptyFields.push("thoughts");
@@ -32,13 +32,20 @@ const createEvent = async (req, res) => {
     return res
       .status(400)
       .json({ message: "Please fill all fields", emptyFields });
-      if (emotion<1||emotion>100)   return res
+  if (emotion < 1 || emotion > 100)
+    return res
       .status(400)
       .json({ message: "Emotion rate must be between 1 and 100" });
 
   try {
     const user_id = req.user._id;
-    const event = await Event.create({ situation, thoughts, emotion,reaction, user_id });
+    const event = await Event.create({
+      situation,
+      thoughts,
+      emotion,
+      reaction,
+      user_id,
+    });
     res.status(200).json(event);
   } catch (error) {
     res.status(400).json({ message: error.message });

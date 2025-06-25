@@ -1,6 +1,6 @@
 import React from "react";
 import "../styles/Home.css";
-import gitaImg from '../assets/GitaComics.jpg'
+import gitaImg from "../assets/GitaComics.jpg";
 import { useTranslation } from "react-i18next";
 
 const Home = () => {

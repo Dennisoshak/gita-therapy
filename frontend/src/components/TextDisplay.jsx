@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from "react";
 
-const TextDisplay = ({text}) => {
+const TextDisplay = ({ text }) => {
   const [textToDisplay, setText] = useState("");
   const [index, setIndex] = useState(0);
-  
 
   useEffect(() => {
     if (text && index < text.length) {
@@ -14,12 +13,16 @@ const TextDisplay = ({text}) => {
 
       return () => clearTimeout(timeout);
     }
-  
-// eslint-disable-next-line
+
+    // eslint-disable-next-line
   }, [index]);
 
-
-  return <div>{textToDisplay}<span></span></div>;
+  return (
+    <div>
+      {textToDisplay}
+      <span></span>
+    </div>
+  );
 };
 
 export default React.memo(TextDisplay);
