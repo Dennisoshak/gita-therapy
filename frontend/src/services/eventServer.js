@@ -18,7 +18,6 @@ console.log(response)
     return error;
   }
 };
-console.log(baseURL);
 
 export const deleteEvent = async (id) => {
   try {
