@@ -94,7 +94,11 @@ const NavBar = () => {
             <Link className="auth-btn login-btn" to="/login" aria-label="Login">
               Login
             </Link>
-            <Link className="auth-btn signup-btn" to="/signup" aria-label="Signup">
+            <Link
+              className="auth-btn signup-btn"
+              to="/signup"
+              aria-label="Signup"
+            >
               Signup
             </Link>
           </div>

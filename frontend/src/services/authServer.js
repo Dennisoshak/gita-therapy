@@ -1,7 +1,9 @@
 import axios from "axios";
 
-const baseURL = process.env.NODE_ENV === 'development'? process.env.REACT_APP_BASE_URL : '/api'
-
+const baseURL =
+  process.env.NODE_ENV === "development"
+    ? process.env.REACT_APP_BASE_URL
+    : "/api";
 
 export const sendSignUp = async (name, email, password) => {
   try {

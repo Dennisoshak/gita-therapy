@@ -15,8 +15,7 @@ const EventForm = () => {
 
   const dispatch = useAppDispatch();
   const user = useAppSelector((state) => state.user);
-  const {t} = useTranslation()
-
+  const { t } = useTranslation();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -25,21 +24,21 @@ const EventForm = () => {
       setError("You must be logged in");
       return;
     }
-    const event = { situation, thoughts, emotion, reaction};
-    if (!situation || !thoughts || !emotion || !reaction){ 
-      setError(t('missing field'));
-    return;
-  }
-  if (emotion<1||emotion>100) {
-    setError(t('emotions range'))
-    return
-  }
+    const event = { situation, thoughts, emotion, reaction };
+    if (!situation || !thoughts || !emotion || !reaction) {
+      setError(t("missing field"));
+      return;
+    }
+    if (emotion < 1 || emotion > 100) {
+      setError(t("emotions range"));
+      return;
+    }
     const response = await postEvent(event, user.token);
     if (response?.status === 200) {
       setEmotions("");
       setThoughts("");
       setREaction("");
-      setSituation("")
+      setSituation("");
       setError(null);
       setEmptyFields([]);
       dispatch(setEvents(user.token));
@@ -51,7 +50,7 @@ const EventForm = () => {
 
   return (
     <form className="create" onSubmit={handleSubmit}>
-      <h3>{t('add new event')}</h3>
+      <h3>{t("add new event")}</h3>
 
       <label>{t("situation")}:</label>
       <input
